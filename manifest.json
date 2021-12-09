@@ -1,0 +1,49 @@
+{
+    "name": "Lecteur Antith\u00e8se Radio",
+    "short_name": "Antith\u00e8se Player",
+    "start_url": "index.html",
+    "display": "standalone",
+    "description": "D\u00e9couvrez l\u2019application Antith\u00e8se Player et \u00e9couter de la musique de tout genre en illimit\u00e9.",
+    "lang": "fr",
+    "categories": "entertainment,music,news",
+    "background_color": "#fdfdfd",
+    "theme_color": "#db4938",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "/images/icons/icon_48x48.png",
+            "type": "image/png", "sizes": "48x48"
+        },
+        {
+            "src": "/images/icons/icon_72x72.png",
+            "sizes": "72x72",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/icons/icon_96x96.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/icons/icon_144x144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/icons/icon_168x168.png",
+            "sizes": "168x168",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/icons/icon_192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/icons/icon_512x512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ]
+  }
+  
