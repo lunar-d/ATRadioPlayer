@@ -5,7 +5,7 @@ const assets = [
   "/css/style.css",
   "/js/main.js",
   "/js/settings.js",
-  "/img/bg-atradio.jpg",
+  "/img/bg-atradio.webp",
 ]
 
 self.addEventListener("install", installEvent => {
