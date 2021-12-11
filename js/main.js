@@ -1,22 +1,26 @@
 if ("serviceWorker" in navigator) {
-    window.addEventListener("load", function() {
-      navigator.serviceWorker
-        .register("/serviceWorker.js")
-        .then(res => console.log("service worker registered"))
-        .catch(err => console.log("service worker not registered", err))
+    window.addEventListener("load", function () {
+        navigator.serviceWorker
+            .register("/serviceWorker.js")
+            .then(res => console.log("service worker registered"))
+            .catch(err => console.log("service worker not registered", err))
     })
-  }
-  
+}
+
 
 const RADIO_NAME = settings.radio_name;
+const RADIO_ID = settings.radio_id;
 const URL_STREAMING = settings.url_streaming;
 const STREAMING_TYPE = settings.streaming_type;
 const NEXT_SONG = settings.next_song;
 const DEFAULT_COVER_ART = settings.default_cover_art;
+const DATE = new Date();
 
 window.addEventListener('DOMContentLoaded', (event) => {
     var page = new Page;
     page.changeTitlePage();
+    page.changeRadioName();
+    page.changeCopyright();
 
     var player = new Player();
     player.play();
@@ -26,9 +30,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
     setInterval(function () {
         getStreamingData();
     }, 5000);
-
-   // var coverArt = document.getElementById('albumArt');
-   // coverArt.style.height = coverArt.offsetWidth + 'px';
 });
 
 // DOM control
@@ -36,6 +37,16 @@ function Page() {
     this.changeTitlePage = function (title = RADIO_NAME) {
         document.title = title;
     };
+
+    this.changeRadioName = function (title = RADIO_NAME) {
+        var radioName = document.getElementById("radioName");
+        radioName.innerHTML = title;
+    }
+
+    this.changeCopyright = function (title = RADIO_NAME) {
+        var radioName = document.getElementById("copyrights");
+        radioName.innerHTML = "© " + DATE.getFullYear() + " " + title;
+    }
 
     this.refreshCurrentSong = function (song, artist) {
         var currentSong = document.getElementById('title');
@@ -71,6 +82,8 @@ function Page() {
                 var artworkUrl = data.cover ?? urlCoverArt;
 
                 //coverArt.style.backgroundImage = 'url(' + artworkUrl + ')';
+                document.getElementsByTagName('body')[0].style.background = 'url('+ artworkUrl +') no-repeat center center fixed'
+                document.getElementsByTagName('body')[0].style.backgroundSize = "cover";
                 coverArt.src = artworkUrl;
 
                 coverArt.className = 'img-fluid rounded mx-auto d-block animated fadeIn';
@@ -83,14 +96,15 @@ function Page() {
                     navigator.mediaSession.metadata = new MediaMetadata({
                         title: song,
                         artist: artist,
-                        artwork: [{ src: artworkUrl,
-                                    type: 'image/png'
-                                 }]
+                        artwork: [{
+                            src: artworkUrl,
+                            type: 'image/png'
+                        }]
                     });
                 }
             }
         }
-        xhttp.open('GET', 'https://api.radioking.io/widget/radio/antithesecvl/track/current', true);
+        xhttp.open('GET', 'https://api.radioking.io/widget/radio/' + RADIO_ID + '/track/current', true);
         xhttp.send();
     }
 }
@@ -131,7 +145,7 @@ function getStreamingData() {
     xhttp.onreadystatechange = function () {
 
         if (this.readyState === 4 && this.status === 200) {
-            if(this.response.length === 0) {
+            if (this.response.length === 0) {
                 console.log('%cdebug', 'font-size: 22px')
             }
 
@@ -148,8 +162,8 @@ function getStreamingData() {
 
             let artist = data.artist.replace(/&apos;/g, '\'');
             let currentArtist = artist.replace(/&amp;/g, '&');
-            currentArtist = currentArtist.replace('  ', ' '); 
-            
+            currentArtist = currentArtist.replace('  ', ' ');
+
             // Change the title
             document.title = currentSong + ' - ' + currentArtist + ' | ' + RADIO_NAME;
 
@@ -157,13 +171,13 @@ function getStreamingData() {
                 page.refreshCover(currentSong, currentArtist);
                 page.refreshCurrentSong(currentSong, currentArtist);
             }
-        } 
+        }
     };
 
     //var d = new Date();
 
     // Requisition with timestamp to prevent cache on mobile devices
-    xhttp.open('GET', 'https://api.radioking.io/widget/radio/antithesecvl/track/current', true);
+    xhttp.open('GET', 'https://api.radioking.io/widget/radio/' + RADIO_ID + '/track/current', true);
     xhttp.send();
 }
 

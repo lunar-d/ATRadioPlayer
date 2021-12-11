@@ -1,17 +1,23 @@
+/*
+    Parametres RadioKing
+*/
 var settings = {
+    // Nom de la Radio.
     'radio_name': 'Antithèse Radio',
 
-    // URL of streaming without / on the final, eg: http://streaming.com:8080
+    // URL du flux, eg: https://www.radioking.com/play/IDRADIO
     'url_streaming': 'https://www.radioking.com/play/antithesecvl',
 
-    // When choosing icecast, make sure the file 'player.log' in the document root is writeable.
-    // Choose between 'shoutcast' or 'icecast'
+    //ID de la radio.
+    'radio_id': 'antithesecvl',
+
+    // Serveur 'shoutcast' ou 'icecast'
+    // par defaut Radioking est compatible icecast.
     'streaming_type': 'icecast',
 
-    // Set to true to show the next song to be played. 
-    // Make sure your streaming show this information!
+    // (Non implémenté) Mettez la valeur true pour afficher la prochaine chanson à jouer.
     'next_song': true,
 
-    // Path to default cover art when none are found
+    // Chemin d'accès à la couverture par défaut lorsqu'il est impossible d'en trouver une.
     'default_cover_art': 'img/bg-atradio.webp',
 };
