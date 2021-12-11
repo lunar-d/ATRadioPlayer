@@ -16,7 +16,7 @@ Vous pouvez commencer en ajoutant vos infos radio :
 	'radio_name': 'Antithèse Radio', // Nom de la Radio.
 	'url_streaming': 'https://www.radioking.com/play/antithesecvl',  // URL du flux, eg: https://www.radioking.com/play/IDRADIO
 	'radio_id': 'antithesecvl', //ID de la radio.
-	'default_cover_art': 'img/bg-atradio.webp',  // Chemin d'accès à la couverture par défaut.
+	'default_cover_art': 'img/defaultArt.webp',  // Chemin d'accès à la couverture par défaut.
 ```
 > Ce que je nomme `IDRADIO` est simplement le nom dans l'url de la page de votre radio sur RadioKing
 ( https://fr.radioking.com/radio/ `id de la radio`) trouvable depuis https://fr.radioking.com/ecouter-radio
