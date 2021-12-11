@@ -1,5 +1,5 @@
 # Lecteur RadioKing PWA
-Lecteur web pour les serveurs Radioking. Utilisation de HTML, JS, CSS.
+Un simple lecteur web pour les serveurs Radioking. Utilisation de HTML, JS, CSS.
 ## Mise en route
 Pour utiliser le lecteur avec votre Webradio, vous commencez par créer un dépôt en utilisant le modèle sur GitHub.
 ### Créer un dépôt à partir du template
