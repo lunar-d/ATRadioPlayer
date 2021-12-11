@@ -26,7 +26,7 @@
 
 @media (prefers-color-scheme: dark) {
    body{
-      background: url('/img/bg-atradio.jpg') no-repeat center center fixed;
+      background: url('/img/bg-atradio.webp') no-repeat center center fixed;
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
@@ -37,7 +37,7 @@
  
  @media (prefers-color-scheme: light) {
    body{
-      background: url('/img/bg-atradio.jpg') no-repeat center center fixed;
+      background: url('/img/bg-atradio.webp') no-repeat center center fixed;
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
