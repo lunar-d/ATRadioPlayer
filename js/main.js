@@ -73,7 +73,7 @@ function Page() {
                 //coverArt.style.backgroundImage = 'url(' + artworkUrl + ')';
                 coverArt.src = artworkUrl;
 
-                coverArt.className = 'animated fadeIn';
+                coverArt.className = 'img-fluid rounded mx-auto d-block animated fadeIn';
 
                 setTimeout(function () {
                     coverArt.className = 'img-fluid rounded mx-auto d-block';

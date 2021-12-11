@@ -13,5 +13,5 @@ var settings = {
     'next_song': true,
 
     // Path to default cover art when none are found
-    'default_cover_art': 'img/bg-atradio.jpg',
+    'default_cover_art': 'img/bg-atradio.webp',
 };
