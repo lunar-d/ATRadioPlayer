@@ -155,10 +155,10 @@ function getStreamingData() {
             let currentSongEl = currentSongElement.replace(/&amp;/g, '&');
 
             // Formating characters to UTF-8
-            let song = data.title.replace(/&apos;/g, '\'');
+            let song = (data.title ?? "").replace(/&apos;/g, '\'');
             let currentSong = song.replace(/&amp;/g, '&');
 
-            let artist = data.artist.replace(/&apos;/g, '\'');
+            let artist = (data.artist ?? "").replace(/&apos;/g, '\'');
             let currentArtist = artist.replace(/&amp;/g, '&');
             currentArtist = currentArtist.replace('  ', ' ');
 
